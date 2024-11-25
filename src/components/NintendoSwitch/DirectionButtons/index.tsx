@@ -1,5 +1,6 @@
 import React from 'react'
-import JoyconButton from '../JoyconButton';
+import DirectionButton from '../DirectionButton';
+
 
 type DirectionButtonsProps = {
   className?: string;
@@ -8,12 +9,12 @@ type DirectionButtonsProps = {
 const DirectionButtons = ({ className }:DirectionButtonsProps ) => {
   return (
     <div className={'flex justify-center items-center text-center gap-1 ' + className}>
-      <JoyconButton direction='left' />
+      <DirectionButton direction='left' />
       <div className='flex flex-col gap-8'>
-        <JoyconButton direction='up' />
-        <JoyconButton direction='down' />
+        <DirectionButton direction='up' />
+        <DirectionButton direction='down' />
       </div>
-      <JoyconButton direction='right' />
+      <DirectionButton direction='right' />
     </div>
   )
 }

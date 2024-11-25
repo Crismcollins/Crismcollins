@@ -3,32 +3,69 @@
 @tailwind utilities;
 
 .light {
-  --background: #F2BC1B;
-  --foreground: #F2622E;
-  --primary: #F21D81;
-  --secondary: #A904BF;
-  --text: #360259;
+  --background: #e0e0e0;
+  --background-secondary: #F4F4F4;
+  --text: #2d2d2d;
+  --highlighted: #4a99eb;
+  --separator: #F4F4F4;
+  --separator2: #e0e0e0;
+  --water-green: #74fac8;
+  --vibrant-coral: #ec5e40;
+  --bright-amber: #f3b23e;
 }
 
+
 .dark {
-  --background: #360259;
-  --foreground: #F2622E;
-  --primary: #F21D81;
-  --secondary: #A904BF;
-  --text: #F2BC1B;
+  --background: #2d2d2d;
+  --background-secondary: #505050;
+  --text: #e0e0e0;
+  --highlighted: #4a99eb;
+  --separator: #7e7e7e;
+  --separator2: #3b3b3b;
+  --water-green: #74fac8;
+  --vibrant-coral: #ec5e40;
+  --bright-amber: #f3b23e;
 }
+
 
 body {
   color: var(--text);
-  background-color: var(--text);
+  background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  /* background-image: url('/images/background.jpg'); */
-  /* background-size: cover;
-  background-position: center; */
+}
+
+@keyframes shine {
+  from {
+    border-color: rgba(74, 153, 235, 1);
+  }
+  33% {
+    border-color: rgba(74, 153, 235, 0.7);
+  }
+  66% {
+    border-color: rgba(74, 153, 235, 1);
+  }
+  to {
+    border-color: rgba(74, 153, 235, 0.7);
+  }
+}
+
+.brilliance {
+  animation: shine 1.8s infinite alternate; /* 1s de duración, alterna entre el estado inicial y el estado brillante */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

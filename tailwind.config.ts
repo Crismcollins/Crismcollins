@@ -11,10 +11,14 @@ const config: Config = {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
+        backgroundsecondary: "var(--background-secondary)",
         text: "var(--text)",
+        highlighted: "var(--highlighted)",
+        separator: "var(--separator)",
+        separator2: "var(--separator2)",
+        watergreen: "var(--water-green)",
+        vibrantcoral: "var(--vibrant-coral)",
+        brightamber: "var(--bright-amber)",
       },
     },
   },

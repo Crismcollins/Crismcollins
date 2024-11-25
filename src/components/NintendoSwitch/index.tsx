@@ -3,9 +3,8 @@ import JoyconRight from "./JoyconRight";
 import Screen from "./Screen";
 
 const NintendoSwitch = () => {
-  
   return (
-    <div className="flex h-[calc(100vh-6rem)] ">
+    <div className="flex h-[80vh] select-none ">
       <JoyconLeft />
       <Screen />
       <JoyconRight />

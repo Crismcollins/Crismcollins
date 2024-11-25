@@ -1,0 +1,1 @@
+export type Screens = 'mainmenu' | 'aboutme' | 'education' | 'jobs' | 'game';
