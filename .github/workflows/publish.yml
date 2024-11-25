@@ -31,8 +31,8 @@ jobs:
 
       - name: Build with Next.js 🏗️
         env:
-          # NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
-          NEXT_PUBLIC_BACKEND_URL: https://crismcollin-deno-portfo-16.deno.dev
+          NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
+          # NEXT_PUBLIC_BACKEND_URL: https://crismcollin-deno-portfo-16.deno.dev
         run: yarn build
 
       - name: Upload artifact 📡
