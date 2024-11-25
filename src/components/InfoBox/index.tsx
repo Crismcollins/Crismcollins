@@ -1,13 +1,13 @@
 import useLanguage from '@/app/hooks/useLanguage';
-import { Education, Job } from '@/types/profile'
+import { EducationModel, JobModel } from '@/types/profile'
 import React from 'react'
 
 type InfoBoxProps = {
-  data: Job | Education | null;
+  data: JobModel | EducationModel | null;
 }
 
-const isJob = (data: Job | Education): data is Job => {
-  return (data as Job).company !== undefined;
+const isJob = (data: JobModel | EducationModel): data is JobModel => {
+  return (data as JobModel).company !== undefined;
 };
 
 const InfoBox = ({

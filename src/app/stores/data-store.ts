@@ -1,19 +1,19 @@
-import { Education, Game, Job, User } from '@/types/profile';
+import { EducationModel, GameModel, JobModel, UserModel } from '@/types/profile';
 import { create } from 'zustand'
 
 type State = {
-  user: User | null;
-  games: Game[] | null;
-  jobs: Job[] | null;
-  educations: Education[] | null;
+  user: UserModel | null;
+  games: GameModel[] | null;
+  jobs: JobModel[] | null;
+  educations: EducationModel[] | null;
   loading: boolean;
 }
 
 type Actions = {
-  setUser: (user: User) => void;
-  setGames: (games: Game[]) => void;
-  setJobs: (jobs: Job[]) => void;
-  setEducations: (educations: Education[]) => void;
+  setUser: (user: UserModel) => void;
+  setGames: (games: GameModel[]) => void;
+  setJobs: (jobs: JobModel[]) => void;
+  setEducations: (educations: EducationModel[]) => void;
   setLoading: (loading: boolean) => void;
 }
 
@@ -23,10 +23,10 @@ const useDataStore = create<State & Actions>((set) => ({
   educations: null,
   jobs: null,
   loading: true,
-  setUser: (user: User) => set(() => ({ user })),
-  setGames: (games: Game[]) => set(() => ({ games })),
-  setJobs: (jobs: Job[]) => set(() => ({ jobs })),
-  setEducations: (educations: Education[]) => set(() => ({ educations })),
+  setUser: (user: UserModel) => set(() => ({ user })),
+  setGames: (games: GameModel[]) => set(() => ({ games })),
+  setJobs: (jobs: JobModel[]) => set(() => ({ jobs })),
+  setEducations: (educations: EducationModel[]) => set(() => ({ educations })),
   setLoading: (loading: boolean) => set(() => ({ loading })),
 }))
 

@@ -16,3 +16,5 @@ export const colors = {
   vibrantcoral: "var(--vibrant-coral)",
   brightamber: "var(--bright-amber)",
 };
+
+type ColorKey = keyof typeof colors;

@@ -2,14 +2,14 @@ import useFadeAnimation from '@/app/hooks/useFadeAnimation';
 import useScreens from '@/app/hooks/useScreens';
 import BadgeGame from '@/components/BadgeGame';
 import Header from '@/components/Header';
-import { Game } from '@/types/profile';
+import { GameModel } from '@/types/profile';
 import React from 'react'
 
 const Game = () => {
 
   const { param, navigateToScreen, isVisible } = useScreens('game');
   const { fadeAnimation, fadeIn, fadeOut } = useFadeAnimation();
-  const game: Game = param;
+  const game: GameModel = param;
 
   const Video = () => (
     <div className="lg:w-1/2 xl:w-full">

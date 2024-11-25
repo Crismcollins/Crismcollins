@@ -4,15 +4,15 @@ import Header from '@/components/Header';
 import InfoBox from '@/components/InfoBox';
 import { TimelineItemProps } from '@/components/TimeLineItem';
 import TimeLine from '@/components/Timeline';
-import { Education } from '@/types/profile';
+import { EducationModel } from '@/types/profile';
 import React, { useState } from 'react'
 
 const Education = () => {
-  const [educationSelected, setEducationSelected] = useState<Education | null>(null);
+  const [educationSelected, setEducationSelected] = useState<EducationModel | null>(null);
   const { param, navigateToScreen, isVisible } = useScreens('education');
   const { fadeAnimation, fadeIn, fadeOut } = useFadeAnimation();
 
-  const educations: Education[] = param;
+  const educations: EducationModel[] = param;
 
   const handlePressItem = (id: number) => {
     const educationPressed = educations.find(education => education.id === id);

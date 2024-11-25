@@ -7,7 +7,7 @@ export type CustomFileResponse = {
   url: string;
 }
 
-export type User = {
+export type UserModel = {
   id?: number;
   full_name: string;
   profession: string;
@@ -23,7 +23,7 @@ export type User = {
   language: Language;
 }
 
-export type Skill = {
+export type SkillModel = {
   id?: number;
   user_id: number;
   name: string;
@@ -32,7 +32,7 @@ export type Skill = {
   language: Language;
 }
 
-export type Education = {
+export type EducationModel = {
   id?: number;
   user_id: number;
   title: string;
@@ -45,7 +45,7 @@ export type Education = {
   logo: CustomFileResponse;
 }
 
-export type Job = {
+export type JobModel = {
   id?: number;
   user_id: number;
   title: string;
@@ -57,8 +57,8 @@ export type Job = {
   company_description?: string;
   location?: string;
   contact?: string;
-  skills?: Skill[];
-  games?: Game[];
+  skills?: SkillModel[];
+  games?: GameModel[];
   achievements: string;
   logo: CustomFileResponse;
 }
@@ -72,7 +72,7 @@ export type ProfilePicture = {
   name: string;
 }
 
-export type Game = {
+export type GameModel = {
   id: number;
   user_id: number;
   name: string;
@@ -85,5 +85,5 @@ export type Game = {
   background: CustomFileResponse;
   duration: string;
   language: Language;
-  skills: Skill[];
+  skills: SkillModel[];
 }

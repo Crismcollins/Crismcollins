@@ -4,17 +4,17 @@ import Header from '@/components/Header';
 import InfoBox from '@/components/InfoBox';
 import { TimelineItemProps } from '@/components/TimeLineItem';
 import TimeLine from '@/components/Timeline';
-import { Job } from '@/types/profile';
+import { JobModel } from '@/types/profile';
 import React, { useState } from 'react'
 
 const Jobs = () => {
-  const [jobSelected, setJobSelected] = useState<Job | null>(null);
+  const [jobSelected, setJobSelected] = useState<JobModel | null>(null);
   const [itemSelected, setItemSelected] = useState<number | null>(null);
 
   const { param, navigateToScreen, isVisible } = useScreens('jobs');
   const { fadeAnimation, fadeIn, fadeOut } = useFadeAnimation();
   
-  const jobs: Job[] = param;
+  const jobs: JobModel[] = param;
 
   const handlePressItem = (id: number) => {
     const jobPressed = jobs.find(job => job.id === id);

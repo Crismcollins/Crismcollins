@@ -1,12 +1,12 @@
-import { Language, ProfilePicture, User } from "@/types/profile";
+import { Language, ProfilePicture, UserModel } from "@/types/profile";
 import { useGetQuery, usePatchQuery } from "./fetchs"
 
 export const getUser = (language: Language) => {
-  return useGetQuery<User>(`/client/user/${language}`, 'Get User');
+  return useGetQuery<UserModel>(`/client/user/${language}`, 'Get User');
 }
 
 export const updateUser = () => {
-  return usePatchQuery<User>('/client/user', 'Update user')
+  return usePatchQuery<UserModel>('/client/user', 'Update user')
 }
 
 export const getProfilePicture = () => {
