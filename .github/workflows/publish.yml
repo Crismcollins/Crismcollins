@@ -23,6 +23,7 @@ jobs:
 
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
+        
 
       - name: Build with Next.js 🏗️
         env:
