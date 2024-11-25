@@ -25,7 +25,7 @@ jobs:
         uses: ./.github/workflows/setup-node
 
       - name: LOG VARIABLE
-        run: echo "NEXT_PUBLIC_BACKEND_URL: ${{ vars.NEXT_PUBLIC_BACKEND_URL }}"
+        run: echo "NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}"
 
 
       - name: Build with Next.js 🏗️
