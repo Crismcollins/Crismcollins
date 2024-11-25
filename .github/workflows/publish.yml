@@ -26,7 +26,7 @@ jobs:
 
       - name: Build with Next.js 🏗️
         env:
-          NEXT_PUBLIC_BACKEND_URL: ${{ env.NEXT_PUBLIC_BACKEND_URL }}
+          NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
         run: yarn build
 
       - name: Upload artifact 📡
