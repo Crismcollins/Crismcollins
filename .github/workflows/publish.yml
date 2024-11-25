@@ -4,9 +4,6 @@ on:
     branches:
       - master
 
-env:
-  NODE_AUTH_TOKEN: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
-
 permissions:
   contents: read
   pages: write
@@ -33,6 +30,9 @@ jobs:
       #     static_site_generator: next
 
       - name: Build with Next.js 🏗️
+        env:
+          # NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
+          NEXT_PUBLIC_BACKEND_URL: https://crismcollin-deno-portfo-16.deno.dev
         run: yarn build
 
       - name: Upload artifact 📡
