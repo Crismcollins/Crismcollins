@@ -30,9 +30,9 @@ jobs:
       #     static_site_generator: next
 
       - name: Build with Next.js 🏗️
+        run: yarn build
         env:
           NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
-        run: yarn build
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
