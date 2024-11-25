@@ -4,6 +4,9 @@ on:
     branches:
       - master
 
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
+
 permissions:
   contents: read
   pages: write
@@ -31,8 +34,6 @@ jobs:
 
       - name: Build with Next.js 🏗️
         run: yarn build
-        env:
-          NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
 
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
