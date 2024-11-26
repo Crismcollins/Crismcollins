@@ -11,7 +11,7 @@ type Actions = {
 }
 
 const useScreensStore = create<State & Actions>((set) => ({
-  screen: 'mainmenu',
+  screen: 'splash',
   param: null,
   setScreen: (screen: Screens, param?: any) => 
     set((state) => ({ 

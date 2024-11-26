@@ -3,16 +3,15 @@ import useScreens from '@/app/hooks/useScreens';
 import BadgeGame from '@/components/BadgeGame';
 import Header from '@/components/Header';
 import { GameModel } from '@/types/profile';
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const Game = () => {
-
   const { param, navigateToScreen, isVisible } = useScreens('game');
   const { fadeAnimation, fadeIn, fadeOut } = useFadeAnimation();
   const game: GameModel = param;
 
   const Video = () => (
-    <div className="lg:w-1/2 xl:w-full">
+    <div className="flex lg:w-1/2 xl:w-full">
       {game.video.includes('youtube') ?
       <iframe
         width="100%"
@@ -45,9 +44,8 @@ const Game = () => {
         className='bg-background'
         onPress={() => navigateToScreen('mainmenu')}
       />
-      <div className='flex flex-col flex-col-reverse px-4 pt-8 bg-background lg:flex-row h-full overflow-y-auto'>
-        {game.video ? <Video /> : <Background />}
-        <div className='flex flex-col items-center gap-8 lg:w-6/12 px-8 py-4 bg-background lg:overflow-y-auto'>
+      <div className='flex flex-col px-4 pt-8 bg-background lg:flex-row h-full overflow-y-auto'>
+        <div className='flex flex-col items-center gap-8 lg:w-6/12 px-2 lg:px-8 py-4 bg-background lg:overflow-y-auto'>
           <p className='text-2xl'>{game.name}</p>
           <img
             src={game.image.url}
@@ -59,7 +57,7 @@ const Game = () => {
           }
 
           {(game.android_link || game.ios_link) && (
-            <div className='flex flex-row gap-8'>
+            <div className='flex flex-row gap-2 sm:gap-16 lg:gap-8'>
               {game.android_link && (
                 <BadgeGame
                   url={game.android_link}
@@ -78,6 +76,7 @@ const Game = () => {
 
           <p className='h-full mb-8'>{game.description}</p>
         </div>
+        {game.video ? <Video /> : <Background />}
       </div>
     </div>
   )

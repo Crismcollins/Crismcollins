@@ -15,9 +15,10 @@ const BadgeGame = ({
   const renderBadge = () => (
     urlStore !== null && (
       <img
+        className='h-8 sm:h-12 lg:h-14 lg:w-40'
         src={urlStore}
-        width={160}
-        height={100}
+        // width={160}
+        // height={100}
       />
     )
   )

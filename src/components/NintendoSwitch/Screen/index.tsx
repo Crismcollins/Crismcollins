@@ -7,13 +7,25 @@ import useAudioStore from '@/app/stores/audio-store';
 import Game from '../Screens/Game';
 import Jobs from '../Screens/Jobs';
 import Education from '../Screens/Education';
+import Splash from '../Screens/Splash';
+import useLoadData from '@/app/hooks/useLoadData';
+import Spinner from '@/components/Spinner';
 
 const TRANSITION_DURATION = 400;
 
 const Screen = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const { loading } = useLoadData();
+
   const { screen } = useScreens();
+
   const addAudio = useAudioStore(state => state.addAudio);
   const [currentScreen, setCurrentScreen] = useState<Screens>(screen);
+
+  const onShowSplash = () => {
+    setIsVisible(true);
+  }
   
   
   useEffect(() => {
@@ -29,14 +41,21 @@ const Screen = () => {
     setTimeout(() => setCurrentScreen(screen), TRANSITION_DURATION);
   }, [screen])
 
+  useEffect(() => {
+    if (!loading)
+      setTimeout(onShowSplash, 10);
+  }, [loading]);
+
   return (
     <div className="w-full h-full bg-gray-900 p-5 xl:max-w-[80%]">
       <div className="h-full bg-black">
-        { currentScreen === 'mainmenu' && <MainMenu /> }
-        { currentScreen === 'aboutme' && <AboutMe /> }
-        { currentScreen === 'game' && <Game /> }
-        { currentScreen === 'jobs' && <Jobs /> }
-        { currentScreen === 'education' && <Education /> }
+        { loading && <Spinner/> }
+        { currentScreen === 'splash' && !loading && <Splash /> }
+        { currentScreen === 'mainmenu' && !loading && <MainMenu /> }
+        { currentScreen === 'aboutme' && !loading && <AboutMe /> }
+        { currentScreen === 'game' && !loading && <Game /> }
+        { currentScreen === 'jobs' && !loading && <Jobs /> }
+        { currentScreen === 'education' && !loading && <Education /> }
       </div>
     </div>
   )

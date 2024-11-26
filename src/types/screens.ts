@@ -1,1 +1,1 @@
-export type Screens = 'mainmenu' | 'aboutme' | 'education' | 'jobs' | 'game';
+export type Screens = 'splash' | 'mainmenu' | 'aboutme' | 'education' | 'jobs' | 'game';

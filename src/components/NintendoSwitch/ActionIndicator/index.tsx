@@ -1,5 +1,5 @@
 import useAudioStore from '@/app/stores/audio-store';
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 
 type ActionIndicatorProps = {
   keyLetter: 'X' | 'Y' | 'A' | 'B' | '+' | '-';
@@ -15,17 +15,20 @@ const ActionIndicator = ({
 
   const { playAudio } = useAudioStore();
 
-  const handleKeyPress = (e: KeyboardEvent) => {
-    if (e.key === keyLetter.toLowerCase() || e.key === keyLetter.toUpperCase()) {
-      playAudio('this_one')
-      onKeyPress?.();
-    }
-  }
+  const handleKeyPress = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() === keyLetter.toLowerCase()) {
+        playAudio('this_one');
+        onKeyPress?.();
+      }
+    },
+    [keyLetter, playAudio, onKeyPress]
+  );
 
   useEffect(() => {
-    window.addEventListener('keypress', handleKeyPress);
-    return () => window.removeEventListener('keypress', handleKeyPress);
-  }, [])
+    window.addEventListener('keyup', handleKeyPress);
+    return () => window.removeEventListener('keyup', handleKeyPress);
+  }, [handleKeyPress]);
 
   return (
     <div className='flex flex-row gap-2 items-center'>

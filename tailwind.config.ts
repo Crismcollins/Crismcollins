@@ -20,6 +20,21 @@ const config: Config = {
         vibrantcoral: "var(--vibrant-coral)",
         brightamber: "var(--bright-amber)",
       },
+      animation: {
+        blink: 'blink 1.3s step-start infinite',
+        slideUp: 'slideUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards',
+      },
+      keyframes: {
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' }
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(600%)' },
+          '60%': { transform: 'translateY(-40%)' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      }
     },
   },
   plugins: [],
