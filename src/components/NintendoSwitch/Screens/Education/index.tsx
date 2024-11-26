@@ -34,7 +34,7 @@ const Education = () => {
       <Header
         onPress={() => navigateToScreen('mainmenu')}
       />
-      <div className='flex gap-8 h-full w-full overflow-y-auto pl-8'>
+      <div className='flex gap-8 h-full w-full overflow-y-auto md:pl-8 justify-center md:justify-start'>
         <TimeLine
           items={educationsToTimeline}
         />

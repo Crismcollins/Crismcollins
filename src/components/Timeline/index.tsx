@@ -10,15 +10,15 @@ const TimeLine: React.FC<TimelineProps> = ({
 }) => {
 
   const RenderLine = () => (
-    <div className='flex ml-[3rem] xl:ml-[4.5rem] w-full'>
+    <div className='flex justify-center md:justify-start md:ml-[3rem] xl:ml-[4.5rem] w-full'>
       <div className='relative w-1 h-12 rounded-lg border-r-2 border-l-2 border-text'></div>
     </div>
   )
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col items-center mt-8">
       {items?.map((item, index) => (
-        <div key={`div-${index}`} className='mb-2'>
+        <div key={`div-${index}`} className='mb-2 w-full'>
           <TimeLineItem key={index} {...item} />
           { index !== ( items.length - 1 ) && <RenderLine key={`line-${index}`}/>}
         </div>
